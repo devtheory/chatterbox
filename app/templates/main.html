@@ -1,5 +1,9 @@
 <h1>All Rooms</h1>
-
+<form>
+  <label>New Room: </label>
+  <input type="text" ng-model="name" />
+  <input type="submit" ng-click="main.addRoom(name)" />
+</form>
 <div ng-repeat="room in main.rooms">
     <h1>{{room.name}}</h1>
 </div>

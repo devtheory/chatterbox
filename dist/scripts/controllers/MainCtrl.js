@@ -1,7 +1,9 @@
 (function () {
     function MainCtrl(Room) {
         this.rooms = Room.all;
-        this.test = Room.all.length;
+        this.addRoom = function(roomName){
+          Room.addRoom(roomName);
+        }
     }
 
     angular
