@@ -1,9 +1,5 @@
 <h1>All Rooms</h1>
-<form>
-  <label>New Room: </label>
-  <input type="text" ng-model="name" />
-  <input type="submit" ng-click="main.addRoom(name)" />
-</form>
+<a ng-click="main.open()" class="btn btn-primary">New Room</a>
 <div ng-repeat="room in main.rooms">
-    <h1>{{room.name}}</h1>
+    <button href="" class="btn btn-default room-btn">{{room.name}}</button>
 </div>
