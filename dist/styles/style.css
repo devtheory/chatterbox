@@ -1,0 +1,21 @@
+/*html {
+  height: 100vh;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+}*/
+
+#room-list {
+  list-style-type: none;
+}
+
+#rooms-pane {
+  background-color: aliceblue;
+}
+
+#main-container {
+  height: 100%;
+  min-height: 100%;
+}

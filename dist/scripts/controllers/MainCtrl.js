@@ -1,9 +1,21 @@
 (function () {
-    function MainCtrl(Room, $uibModal) {
+    function MainCtrl(Room, Message, $uibModal) {
         this.rooms = Room.all;
-        // this.addRoom = function(roomName){
-        //   Room.addRoom(roomName);
-        // }
+        this.room = null;
+        this.message = null;
+        this.messages;
+
+        this.setRoom = function(room){
+          this.room = room;
+          this.messages = Message.getMessagesFor(room);
+          console.log("setRoom");
+          console.log(this.messages);
+        }
+
+        this.createMessage = function(message){
+          Message.createMessage(this.room.$id, message);
+        }
+
         this.open = function () {
             var modalInstance = $uibModal.open({
                 animation: true,
@@ -15,16 +27,10 @@
                 appendTo: undefined,
                 size: 'sm'
             });
-
-            modalInstance.result.then(function (data) {
-              //ok
-            }, function () {
-              //dismiss
-            });
         };
     }
 
     angular
         .module('chatterbox')
-        .controller('MainCtrl', ['Room', '$uibModal', MainCtrl]);
+        .controller('MainCtrl', ['Room', 'Message', '$uibModal', MainCtrl]);
 })();
