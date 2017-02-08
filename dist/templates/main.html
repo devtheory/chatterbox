@@ -10,11 +10,11 @@
   <div class="col-md-9">
     <h2>{{main.room.name}}</h2>
     <div>
-      <p ng-repeat="message in main.messages">
+      <p class="style" + {{main.getStyle()}} ng-repeat="message in main.messages">
         <strong>{{message.username}}:</strong> {{message.content}} - <small>{{message.sentAt}}</small>
       </p>
     </div>
-    <input type="text" ng-model="message" />
-    <input type="submit" ng-click="main.createMessage(message)" />
+    <input type="text" ng-model="main.message" />
+    <input type="submit" ng-click="main.createMessage(main.message)" />
   </div>
 </section>

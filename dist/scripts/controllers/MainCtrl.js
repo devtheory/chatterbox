@@ -8,12 +8,11 @@
         this.setRoom = function(room){
           this.room = room;
           this.messages = Message.getMessagesFor(room);
-          console.log("setRoom");
-          console.log(this.messages);
         }
 
         this.createMessage = function(message){
           Message.createMessage(this.room.$id, message);
+          this.message = null;
         }
 
         this.open = function () {

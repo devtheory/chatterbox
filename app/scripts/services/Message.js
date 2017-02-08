@@ -13,11 +13,7 @@
         }
 
         var getMessagesFor = function(room){
-          var msgs;
-          ref.orderByChild("roomId").equalTo(room.$id).on("value", function (data) {
-                    msgs = data.val();
-                });
-                return msgs;
+          return $firebaseArray(ref.orderByChild("roomId").equalTo(room.$id));
         }
         return {
             createMessage: createMessage,
